@@ -1,6 +1,54 @@
 # CI-CD
 
 
+
+# ✅ Deployment Workflow
+
+### 1️⃣ Push the Code to GitLab
+
+Developers commit & push code to a GitLab repository.
+GitLab CI/CD pipeline can be triggered automatically.
+
+### 2️⃣ Build a JAR using Maven/Gradle
+
+GitLab CI/CD pipeline builds the JAR using Maven or Gradle.
+Example Maven command:
+sh
+Copy
+Edit
+mvn clean package
+Output: A JAR file (target/my-app.jar).
+
+### 3️⃣ Build a Docker Image
+
+Use a Dockerfile to create a Docker image containing the JAR.
+Example Dockerfile:
+dockerfile
+
+FROM openjdk:17
+COPY target/my-app.jar /app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+Build the image:
+sh
+
+docker build -t my-app:latest .
+Store the image in a registry (Docker Hub, AWS ECR, or an on-premise registry):
+sh
+
+docker tag my-app my-dockerhub-username/my-app:latest
+docker push my-dockerhub-username/my-app:latest
+
+### 4️⃣ Deploy the Docker Container
+
+The Docker container is run on a server (AWS, on-prem, etc.).
+Example:
+sh
+docker run -d -p 8080:8080 --name my-app my-dockerhub-username/my-app:latest
+If using Kubernetes, deploy it via kubectl apply -f deployment.yaml.
+
+
+
+
 ## How do you do deployment in our company?
 
 Deployment processes vary from company to company, but since you have worked with Spring Boot, Kafka, AWS S3, Kubernetes (K8s), DB2, Perl, and Elasticsearch, your company likely follows a CI/CD pipeline-based deployment for Java microservices.
