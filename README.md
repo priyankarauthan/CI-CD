@@ -47,6 +47,23 @@ docker run -d -p 8080:8080 --name my-app my-dockerhub-username/my-app:latest
 If using Kubernetes, deploy it via kubectl apply -f deployment.yaml.
 
 
+# Steps to Automate Deployment in GitLab
+
+1️⃣ Push Code to GitLab
+
+Developers commit and push code to the GitLab repository.
+2️⃣ Build the JAR using Maven/Gradle
+
+The GitLab pipeline compiles the Java code and creates a JAR.
+3️⃣ Build a Docker Image & Push to Registry
+
+The pipeline creates a Docker image and pushes it to a registry (Docker Hub, AWS ECR, GitLab Container Registry, etc.).
+4️⃣ Deploy the Docker Container on a Server
+
+The pipeline pulls the latest image and runs it on a remote server (AWS EC2, On-Premise VM, Kubernetes, etc.).
+
+
+
 
 
 ## How do you do deployment in our company?
