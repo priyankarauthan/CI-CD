@@ -1,63 +1,19 @@
 # CI-CD
 
-
-
-# ✅ Deployment Workflow
-
-### 1️⃣ Push the Code to GitLab
-
-Developers commit & push code to a GitLab repository.
-GitLab CI/CD pipeline can be triggered automatically.
-
-### 2️⃣ Build a JAR using Maven/Gradle
-
-GitLab CI/CD pipeline builds the JAR using Maven or Gradle.
-Example Maven command:
-sh
-Copy
-Edit
-mvn clean package
-Output: A JAR file (target/my-app.jar).
-
-### 3️⃣ Build a Docker Image
-
-Use a Dockerfile to create a Docker image containing the JAR.
-Example Dockerfile:
-dockerfile
-
-FROM openjdk:17
-COPY target/my-app.jar /app.jar
-ENTRYPOINT ["java", "-jar", "/app.jar"]
-Build the image:
-sh
-
-docker build -t my-app:latest .
-Store the image in a registry (Docker Hub, AWS ECR, or an on-premise registry):
-sh
-
-docker tag my-app my-dockerhub-username/my-app:latest
-docker push my-dockerhub-username/my-app:latest
-
-### 4️⃣ Deploy the Docker Container
-
-The Docker container is run on a server (AWS, on-prem, etc.).
-Example:
-sh
-docker run -d -p 8080:8080 --name my-app my-dockerhub-username/my-app:latest
-If using Kubernetes, deploy it via kubectl apply -f deployment.yaml.
-
-
 # Steps to Automate Deployment in GitLab
 
 1️⃣ Push Code to GitLab
 
 Developers commit and push code to the GitLab repository.
+
 2️⃣ Build the JAR using Maven/Gradle
 
 The GitLab pipeline compiles the Java code and creates a JAR.
+
 3️⃣ Build a Docker Image & Push to Registry
 
 The pipeline creates a Docker image and pushes it to a registry (Docker Hub, AWS ECR, GitLab Container Registry, etc.).
+
 4️⃣ Deploy the Docker Container on a Server
 
 The pipeline pulls the latest image and runs it on a remote server (AWS EC2, On-Premise VM, Kubernetes, etc.).
@@ -75,11 +31,17 @@ Could you confirm which specific deployment strategy your company follows? Here 
 ### 1. CI/CD-Based Deployment (Jenkins, GitHub Actions, GitLab CI/CD, etc.)
 
 Code Commit → Developer pushes changes to Git (GitHub, GitLab, Bitbucket).
+
 Build & Test → A CI tool like Jenkins, GitHub Actions, GitLab CI builds the application using Maven/Gradle and runs unit/integration tests.
+
 Artifact Storage → The built JAR/WAR is stored in Nexus, Artifactory, or AWS S3.
+
 Deployment to Kubernetes/Docker
+
 A Docker image is created and pushed to Docker Hub or AWS ECR.
+
 Helm charts or Kubernetes manifests deploy the service to K8s clusters.
+
 Monitoring & Logging → Services like Prometheus, Grafana, Splunk, ELK (Elasticsearch, Logstash, Kibana) monitor logs & metrics.
 
 
