@@ -77,5 +77,62 @@ Let me know, and I can provide more specific details based on your workflow! �
 
 Artifactory is a binary artifact repository used for storing and managing build artifacts, such as JARs, WARs, Docker images, and other dependencies. It is commonly used in CI/CD pipelines for deploying Java applications.
 
+## How do you ensure the quality of your code?
+
+
+##### ✅ 1. In Your IDE (e.g., IntelliJ IDEA, Eclipse)
+
+a. Warnings and Annotations
+
+Deprecated methods are usually highlighted or struck through.
+
+Look for the @Deprecated annotation above the method or class.
+```
+@Deprecated
+public void oldMethod() {
+    // ...
+}
+```
+b. Hover or Ctrl+Click
+
+Hover over or Ctrl/Cmd+Click the method to see the Javadoc which often includes:
+
+A warning.
+
+A recommendation for the alternative method.
+
+c. IDE Inspection Tools
+In IntelliJ IDEA:
+Code > Inspect Code > Whole Project → will list deprecated API usages.
+
+In Eclipse:
+Use Problems view and filter for deprecation.
+
+✅ 2. Use Build Tool Warnings
+
+a. Maven
+Use mvn clean compile with -X for debug logs. It shows deprecated warnings.
+
+b. Gradle
+Run: ./gradlew build --warning-mode all
+
+✅ 3. Static Analysis Tools
+
+SonarQube, Checkstyle, and PMD can detect deprecated API usage.
+
+They help flag usage in reports and CI pipelines.
+
+✅ 4. Dependency Upgrade Awareness
+
+When you upgrade Spring Boot, check the Spring Boot release notes and Spring Framework deprecated list for deprecations.
+
+✅ 5. Using jdeprscan (JDK Tool)
+
+If you're using Java 9+, use the jdeprscan tool:
+
+```
+jdeprscan --class-path target/classes --release 17
+```
+This reports use of deprecated APIs for the given Java release.
 
      
