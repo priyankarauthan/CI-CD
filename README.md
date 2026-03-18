@@ -48,9 +48,7 @@ You → Docker CLI → Docker Engine → Containers
 
 Example:
 
-docker build
-docker run
-docker ps
+docker build,   docker run,      docker ps
 
 👉 It’s just a tool to give instructions
 
