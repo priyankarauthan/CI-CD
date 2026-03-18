@@ -1,6 +1,6 @@
 # CI-CD 
 
-- [How do you do deployment in your company?](#how-do-you-do-deployment-in-your-company?)
+- [How do you do deployment in your company?](#how-do-you-do-deployment-in-your-company)
 
 
 
@@ -8,22 +8,22 @@
 
 A container is a lightweight package that includes:
 
-Application code
+- Application code
 
-Runtime (Java, Python, Node)
+- Runtime (Java, Python, Node)
 
-Libraries & dependencies
+- Libraries & dependencies
 
-Config files
+- Config files
 
 👉 All bundled together so it runs anywhere consistently
 
 
 ## 🔹 Real Tools
 
-Docker → to create containers
+- Docker → to create containers
 
-Kubernetes → to manage containers at scale
+- Kubernetes → to manage containers at scale
 
 
 ## 🔬 What Exactly Happens in Containerization?
