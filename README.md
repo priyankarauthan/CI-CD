@@ -34,6 +34,86 @@ A container is a lightweight package that includes:
 
 
 
+## 🐳 Docker Architecture 
+
+👉 Think of Docker as having 3 main parts:
+```
+You → Docker CLI → Docker Engine → Containers
+```
+
+**🧩 1. Docker CLI (Command Line)**
+
+👉 This is what you use
+
+Example:
+
+docker build
+docker run
+docker ps
+
+👉 It’s just a tool to give instructions
+
+**🧠 2. Docker Engine (Brain of Docker)**
+
+👉 This is the main system that does all the work
+
+It:
+
+- Builds images
+
+- Runs containers
+
+- Manages everything
+
+👉 You don’t see it, but it runs in background
+
+**📦 3. Images (Blueprint)**
+
+👉 Image = ready-made package
+
+Contains:
+
+App
+
+Java/Python
+
+Dependencies
+
+👉 Example:
+```
+docker build -t my-app .
+```
+**🚀 4. Containers (Running App)**
+
+👉 Container = running version of image
+
+Example:
+
+docker run my-app
+
+👉 This actually starts your app
+
+## 🔄 Full Flow (Very Important)    
+1. You type command (CLI)
+2. Docker Engine receives it
+3. Engine uses Image
+4. Creates Container
+5. App starts
+🧠 Simple Real-Life Analogy
+
+👉 Think of it like cooking 🍳
+
+## 🔥 What Happens Internally In Docker
+
+When you run: docker run my-app
+
+👉 Docker Engine: 
+- Checks if image exists
+
+- Creates container
+
+- Runs your app
+
 ## How does Docker work across all OS?
 
 **👉 Docker containers need Linux to run**
