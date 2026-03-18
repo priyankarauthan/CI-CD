@@ -39,7 +39,13 @@ A container is a lightweight package that includes:
 
 👉 Think of Docker as having 3 main parts:
 ```
-You → Docker CLI → Docker Engine → Containers
+You (CLI command)
+   ↓
+Docker CLI
+   ↓
+Docker Daemon (server)
+   ↓
+Containers / Images created
 ```
 
 **🧩 1. Docker CLI (Command Line)**
@@ -100,7 +106,37 @@ docker run my-app
 5. App starts
 🧠 Simple Real-Life Analogy
 
-👉 Think of it like cooking 🍳
+
+
+
+        ┌──────────────┐
+        │    USER      │
+        │ (You / Dev)  │
+        └──────┬───────┘
+               │
+               ▼
+        ┌──────────────┐
+        │ Docker CLI   │
+        │ (docker run) │
+        └──────┬───────┘
+               │
+               ▼
+        ┌──────────────┐
+        │ REST API     │
+        │ (Communication)
+        └──────┬───────┘
+               │
+               ▼
+        ┌──────────────┐
+        │ Docker Engine│
+        │ (dockerd)    │  ← SERVER
+        └──────┬───────┘
+               │
+     ┌─────────┼─────────┐
+     ▼         ▼         ▼
+┌────────┐ ┌────────┐ ┌────────┐
+│ Images │ │Containers│ │Networks│
+└────────┘ └────────┘ └────────┘
 
 ## 🔥 What Happens Internally In Docker
 
