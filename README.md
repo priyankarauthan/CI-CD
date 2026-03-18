@@ -25,108 +25,108 @@ A container is a lightweight package that includes:
 
 - Kubernetes → to manage containers at scale
 
+| Tool       | Responsibility           |
+| ---------- | ------------------------ |
+| Jenkins    | Automates steps          |
+| Docker     | Builds & runs containers |
+| Kubernetes | Deploys containers       |
 
-## 🔬 What Exactly Happens in Containerization?
 
-Think of containerization as 2 major phases:    
 
-👉 1. Build Phase (Create Image)    
-👉 2. Run Phase (Start Container)    
 
-🏗️ 1. Build Phase — Creating the Container Image    
 
-This happens when you run:
 
-docker build -t my-app .    
-## 🔹 Step 1: Read Dockerfile
+
+## 📦 What Exactly Happens in Containerization (Simple Steps)
+
+Think of it in 2 parts:
+
+👉 1. Build (prepare your app)    
+👉 2. Run (start your app)    
+
+🏗️ PART 1: BUILD (Creating the Image)
+**🔹 Step 1: You write your app**
 
 Example:
+
+Spring Boot app → app.jar
+
+**🔹 Step 2: You write a Dockerfile**
 ```
 FROM openjdk:17
 COPY app.jar app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
+CMD ["java","-jar","app.jar"]
 ```
 
-👉 Docker reads instructions one by one
+👉 This file tells Docker:
 
-## 🔹 Step 2: Create Layers (VERY IMPORTANT 🔥)    
+Use Java
 
-Each line creates a layer:
+Copy my app
 
-Base OS layer (Linux)
+Run my app
 
-Java layer
+**🔹 Step 3: You build the image**
+docker build -t my-app .
 
-App layer
+## 👉 What Docker does:
 
-👉 These layers are:
+- Takes base image (Java already installed)
 
-Cached
+- Adds your app (app.jar)
 
-Reusable
+- Saves everything as a package
 
-Immutable
+👉 This package = Image
 
-## 🔹 Step 3: Build Image
+🔥 Think of Image as:
 
-👉 Final result = Docker Image
+👉 A ready-made setup (like a zipped file with everything)
 
-Read-only template
-
-Stored locally (or in registry like Docker Hub)
-
-## 🚀 2. Run Phase — Starting the Container
-
-This happens when you run:
-
+## 🚀 PART 2: RUN (Starting the Container)
+**🔹 Step 4: You run the container**
 docker run my-app
-## 🔹 Step 1: Create Container from Image
+**🔹 Step 5: Docker prepares environment**
 
-Add a writable layer on top of image
+👉 Docker:
 
-👉 Image = blueprint
-👉 Container = running instance
+Creates a small isolated space
 
-## 🔹 Step 2: Use Host OS Kernel
+Gives your app its own:
+
+Files
+
+Network
+
+Processes
+
+**🔹 Step 6: No OS is started**
 
 👉 Important:
 
-No new OS is created
+❌ No new OS
 
-Container shares host kernel
+✅ Uses your system’s OS
 
-## 🔹 Step 3: Isolation Using Namespaces
+👉 That’s why it’s fast
 
-Linux provides namespaces:
+**🔹 Step 7: Your app starts**
 
-PID namespace → separate process IDs
-
-Network namespace → separate IP/ports
-
-File system namespace
-
-👉 Makes container feel like a separate system
-
-## 🔹 Step 4: Resource Control Using cgroups
-
-👉 Control:
-
-CPU usage
-
-Memory usage
-
-Disk I/O
-
-## 🔹 Step 5: Start the Application Process
-
-👉 Finally runs:
-
+👉 Docker runs:
+```
 java -jar app.jar
+```
+👉 Your app is now:
 
-👉 This is just a process inside container
+Running
 
-## 🔁 Full Flow (Simple)
-Code → Dockerfile → Image → Container → Running App
+Accessible (API, service, etc.)
+
+## 🔁 Full Flow (Very Simple)    
+Write App → Create Dockerfile → Build Image → Run Container → App Starts
+
+
+
 
 
 
