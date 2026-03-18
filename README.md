@@ -23,6 +23,111 @@ Docker → to create containers
 Kubernetes → to manage containers at scale
 
 
+## 🔬 What Exactly Happens in Containerization?
+
+Think of containerization as 2 major phases:    
+
+👉 1. Build Phase (Create Image)    
+👉 2. Run Phase (Start Container)    
+
+🏗️ 1. Build Phase — Creating the Container Image    
+
+This happens when you run:
+
+docker build -t my-app .    
+🔹 Step 1: Read Dockerfile
+
+Example:
+```
+FROM openjdk:17
+COPY app.jar app.jar
+ENTRYPOINT ["java","-jar","app.jar"]
+```
+
+👉 Docker reads instructions one by one
+
+🔹 Step 2: Create Layers (VERY IMPORTANT 🔥)    
+
+Each line creates a layer:
+
+Base OS layer (Linux)
+
+Java layer
+
+App layer
+
+👉 These layers are:
+
+Cached
+
+Reusable
+
+Immutable
+
+🔹 Step 3: Build Image
+
+👉 Final result = Docker Image
+
+Read-only template
+
+Stored locally (or in registry like Docker Hub)
+
+🚀 2. Run Phase — Starting the Container
+
+This happens when you run:
+
+docker run my-app
+🔹 Step 1: Create Container from Image
+
+Add a writable layer on top of image
+
+👉 Image = blueprint
+👉 Container = running instance
+
+🔹 Step 2: Use Host OS Kernel
+
+👉 Important:
+
+No new OS is created
+
+Container shares host kernel
+
+🔹 Step 3: Isolation Using Namespaces
+
+Linux provides namespaces:
+
+PID namespace → separate process IDs
+
+Network namespace → separate IP/ports
+
+File system namespace
+
+👉 Makes container feel like a separate system
+
+🔹 Step 4: Resource Control Using cgroups
+
+👉 Control:
+
+CPU usage
+
+Memory usage
+
+Disk I/O
+
+🔹 Step 5: Start the Application Process
+
+👉 Finally runs:
+
+java -jar app.jar
+
+👉 This is just a process inside container
+
+🔁 Full Flow (Simple)
+Code → Dockerfile → Image → Container → Running App
+
+
+
+
 
 ## ⚙️ What Goes Into a Jenkins Groovy (Jenkinsfile) for Microservices?
 
