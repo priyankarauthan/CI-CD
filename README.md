@@ -42,8 +42,8 @@ A container is a lightweight package that includes:
 
 👉 “If my laptop is Mac/Windows (not Linux), how does Docker still work?”
 
-🔥 Now I’ll explain in the simplest way
-🐧 Case 1: If you are using LINUX
+🔥 Now I’ll explain in the simplest way    
+## 🐧 Case 1: If you are using LINUX
 
 👉 Your system is already Linux
 
@@ -55,11 +55,11 @@ Containers run directly
 
 👉 No extra layer needed
 
-Think:
+Think:-
 
 👉 You already have what Docker needs
 
-🍎🪟 Case 2: If you are using MAC or WINDOWS
+## 🍎🪟 Case 2: If you are using MAC or WINDOWS
 
 👉 Your system is NOT Linux ❌
 
