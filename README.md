@@ -1,6 +1,33 @@
-# CI-CD
+# CI-CD 
 
-# Steps to Automate Deployment in GitLab
+
+## What is a Container?
+
+A container is a lightweight package that includes:
+
+Application code
+
+Runtime (Java, Python, Node)
+
+Libraries & dependencies
+
+Config files
+
+👉 All bundled together so it runs anywhere consistently
+
+
+## 🔹 Real Tools
+
+Docker → to create containers
+
+Kubernetes → to manage containers at scale
+
+
+
+
+
+
+## Steps to Automate Deployment in GitLab
 
 1️⃣ Push Code to GitLab
 
