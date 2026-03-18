@@ -1,5 +1,7 @@
 # CI-CD 
 
+- [How do you do deployment in your company?](#how-do-you-do-deployment-in-your-company?)
+
 
 ## What is a Container?
 
@@ -359,7 +361,7 @@ The pipeline pulls the latest image and runs it on a remote server (AWS EC2, On-
 
 
 
-## How do you do deployment in our company?
+## How do you do deployment in your company?
 
 Deployment processes vary from company to company, but since you have worked with Spring Boot, Kafka, AWS S3, Kubernetes (K8s), DB2, Perl, and Elasticsearch, your company likely follows a CI/CD pipeline-based deployment for Java microservices.
 
