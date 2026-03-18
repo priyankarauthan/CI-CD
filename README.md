@@ -1,6 +1,7 @@
 # CI-CD 
 
 - [How do you do deployment in your company?](#how-do-you-do-deployment-in-your-company)
+- [How does Docker work across all OS?](#how-does-docker-work-across-all-os)
 
 
 
@@ -32,6 +33,63 @@ A container is a lightweight package that includes:
 | Kubernetes | Deploys containers       |
 
 
+
+## How does Docker work across all OS?
+
+**👉 Docker containers need Linux to run**
+
+❓ Then your question becomes:
+
+👉 “If my laptop is Mac/Windows (not Linux), how does Docker still work?”
+
+🔥 Now I’ll explain in the simplest way
+🐧 Case 1: If you are using LINUX
+
+👉 Your system is already Linux
+
+So:
+
+Docker runs directly
+
+Containers run directly
+
+👉 No extra layer needed
+
+Think:
+
+👉 You already have what Docker needs
+
+🍎🪟 Case 2: If you are using MAC or WINDOWS
+
+👉 Your system is NOT Linux ❌
+
+👉 But Docker NEEDS Linux ✅
+
+💡 So what Docker does?
+
+👉 It secretly creates a small Linux system inside your machine
+
+Step-by-step:
+
+You install Docker Desktop
+
+Docker creates a small Linux VM (in background)
+
+Containers run inside that Linux
+
+So actually:
+
+👉 When you run:
+
+docker run my-app
+
+👉 It is doing:
+
+Your Laptop (Mac/Windows)
+    ↓
+Small Hidden Linux
+    ↓
+Your Container runs here
 
 
 
