@@ -4,6 +4,7 @@
 - [How does Docker work across all OS?](#how-does-docker-work-across-all-os)
 - [Docker Architecture](#docker-architecture)
 - [ What is Port Mapping in Docker](#what-is-port-mapping-in-docker)
+- [🚀 Step-by-Step: Run Spring Boot App in Docker](#run-spring-boot-app-in-docker)
 
 
 
@@ -11,6 +12,78 @@
 
 Port mapping means connecting a port inside a container to a port on your machine (host) so you can access the application.
 
+## 🚀 Step-by-Step: Run Spring Boot App in Docker
+
+
+✅ 1. Build your Spring Boot JAR   
+
+First, create a JAR file of your application.
+
+If using Maven:
+
+mvn clean package
+
+If using Gradle:
+
+gradle build
+
+👉 Output will be inside:
+
+target/your-app.jar
+✅ 2. Create a Dockerfile   
+
+In your project root directory, create a file named:
+
+Dockerfile
+Example Dockerfile:
+# Use base image with Java
+FROM openjdk:17-jdk-slim
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy jar file from local to container
+COPY target/your-app.jar app.jar
+
+# Expose application port
+EXPOSE 8080
+
+# Command to run the application
+ENTRYPOINT ["java", "-jar", "app.jar"]
+✅ 3. Build Docker Image   
+
+Run this command in your project root (where Dockerfile exists):
+
+docker build -t springboot-app:1.0 .
+
+👉 This will:
+
+Read Dockerfile
+
+Create image
+
+Tag it as springboot-app:1.0
+
+✅ 4. Run Docker Container   
+docker run -d -p 8080:8080 springboot-app:1.0
+Explanation:
+
+-d → run in background
+
+-p 8080:8080 → map local port → container port
+
+✅ 5. Verify Application   
+
+Open browser:
+
+http://localhost:8080
+
+If deployed correctly → your app will be running 🎉
+
+✅ 6. Check Running Containers   
+docker ps
+✅ 7. Stop Container   
+docker stop <container_id>
 
 
 ## What is a Container?
