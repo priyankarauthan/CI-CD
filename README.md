@@ -214,17 +214,17 @@ Your Container runs here
 
 Think of it in 2 parts:
 
-👉 1. Build (prepare your app)    
-👉 2. Run (start your app)    
+👉 1. Build (prepare your app)       
+👉 2. Run (start your app)       
 
-🏗️ PART 1: BUILD (Creating the Image)
-**🔹 Step 1: You write your app**
+🏗️ PART 1: BUILD (Creating the Image)   
+**🔹 Step 1: You write your app**   
 
 Example:
 
 Spring Boot app → app.jar
 
-**🔹 Step 2: You write a Dockerfile**
+**🔹 Step 2: You write a Dockerfile**   
 ```
 FROM openjdk:17
 COPY app.jar app.jar
@@ -315,7 +315,7 @@ Code → Build → Test → Package → Scan → Deploy → Verify
 
 ## 🧱 Ideal Pipeline Stages for Microservices    
 
-🔹 1. Checkout Stage (Get Code)
+🔹 1. Checkout Stage (Get Code)   
 ```
 stage('Checkout') {
     steps {
@@ -326,7 +326,7 @@ stage('Checkout') {
 
 👉 Pull latest code from Git
 
-🔹 2. Build Stage    
+🔹 2. Build Stage          
 ```
 stage('Build') {
     steps {
@@ -337,7 +337,7 @@ stage('Build') {
 
 👉 Compile your microservice
 
-🔹 3. Unit Test Stage    
+🔹 3. Unit Test Stage       
 ```
 stage('Unit Test') {
     steps {
@@ -348,7 +348,7 @@ stage('Unit Test') {
 👉 Run unit tests
 👉 Fail fast if broken
 
-🔹 4. Code Quality / Static Analysis (Very Important 🔥)    
+🔹 4. Code Quality / Static Analysis (Very Important 🔥)       
 ```
 stage('Code Quality') {
     steps {
