@@ -3,6 +3,13 @@
 - [How do you do deployment in your company?](#how-do-you-do-deployment-in-your-company)
 - [How does Docker work across all OS?](#how-does-docker-work-across-all-os)
 - [Docker Architecture](#docker-architecture)
+- [ What is Port Mapping in Docker](#what-is-port-mapping-in-docker)
+
+
+
+## What is Port Mapping in Docker?
+
+Port mapping means connecting a port inside a container to a port on your machine (host) so you can access the application.
 
 
 
