@@ -12,7 +12,7 @@
 
 Port mapping means connecting a port inside a container to a port on your machine (host) so you can access the application.
 
-## 🚀 Step-by-Step: Run Spring Boot App in Docker
+## Step-by-Step: Run Spring Boot App in Docker
 
 
 ✅ 1. Build your Spring Boot JAR   
