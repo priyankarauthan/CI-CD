@@ -36,20 +36,20 @@ In your project root directory, create a file named:
 
 Dockerfile
 Example Dockerfile:
-# Use base image with Java
+** Use base image with Java**
 FROM openjdk:17-jdk-slim
 
-# Set working directory inside container
+** Set working directory inside container**
 WORKDIR /app
 
-# Copy jar file from local to container
+** Copy jar file from local to container **
 COPY target/your-app.jar app.jar
 
-# Expose application port
+** Expose application port **
 EXPOSE 8080
 
-# Command to run the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+** Command to run the application **
+ENTRYPOINT ["java", "-jar", "app.jar"]   
 ✅ 3. Build Docker Image   
 
 Run this command in your project root (where Dockerfile exists):
@@ -62,7 +62,7 @@ Read Dockerfile
 
 Create image
 
-Tag it as springboot-app:1.0
+Tag it as springboot-app:1.0   
 
 ✅ 4. Run Docker Container   
 docker run -d -p 8080:8080 springboot-app:1.0
@@ -70,7 +70,7 @@ Explanation:
 
 -d → run in background
 
--p 8080:8080 → map local port → container port
+-p 8080:8080 → map local port → container port   
 
 ✅ 5. Verify Application   
 
