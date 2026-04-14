@@ -183,8 +183,7 @@ docker run my-app
 2. Docker Engine receives it
 3. Engine uses Image
 4. Creates Container
-5. App starts
-🧠 Simple Real-Life Analogy
+5. App starts  
 
 
 
