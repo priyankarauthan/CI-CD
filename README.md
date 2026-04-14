@@ -178,7 +178,7 @@ docker run my-app
 
 👉 This actually starts your app
 
-## 🔄 Full Flow (Very Important)    
+## 🔄 Full Flow   
 1. You type command (CLI)
 2. Docker Engine receives it
 3. Engine uses Image
