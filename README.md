@@ -32,12 +32,13 @@ gradle build
 target/your-app.jar   
 ✅ 2. Create a Dockerfile   
 
-In your project root directory, create a file named:
+In your project root directory, create a file named:   
 
-Dockerfile
-Example Dockerfile:
-** Use base image with Java**
-FROM openjdk:17-jdk-slim      
+Dockerfile   
+Example Dockerfile:  
+```
+** Use base image with Java**   
+FROM openjdk:17-jdk-slim         
 
 ** Set working directory inside container**   
 WORKDIR /app   
@@ -48,8 +49,9 @@ COPY target/your-app.jar app.jar
 ** Expose application port **   
 EXPOSE 8080   
 
-** Command to run the application **
-ENTRYPOINT ["java", "-jar", "app.jar"]      
+** Command to run the application **   
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```     
 ✅ 3. Build Docker Image      
 
 Run this command in your project root (where Dockerfile exists):
