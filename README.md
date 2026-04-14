@@ -37,7 +37,7 @@ In your project root directory, create a file named:
 Dockerfile   
 Example Dockerfile:  
 ```
-** Use base image with Java**   
+**Use base image with Java**   
 FROM openjdk:17-jdk-slim         
 
 ** Set working directory inside container**   
