@@ -29,7 +29,7 @@ gradle build
 
 👉 Output will be inside:
 
-target/your-app.jar
+target/your-app.jar   
 ✅ 2. Create a Dockerfile   
 
 In your project root directory, create a file named:
